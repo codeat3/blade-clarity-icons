@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="./socialcard-blade-line-awesome.png" width="1280" title="Social Card Blade Clarity Icons">
+    <img src="./socialcard-blade-clarity-icons.png" width="1280" title="Social Card Blade Clarity Icons">
 </p>
 
 # Blade Clarity Icons
