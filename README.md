@@ -14,9 +14,9 @@
     <img src="https://img.shields.io/packagist/dt/codeat3/blade-clarity-icons" alt="Total Downloads">
 </a>
 
-A package to easily make use of [Blade Clarity Icons](https://github.com/icons8/line-awesome) in your Laravel Blade views.
+A package to easily make use of [Blade Clarity Icons](https://github.com/vmware/clarity-assets) in your Laravel Blade views.
 
-For a full list of available icons see [the SVG directory](resources/svg) or preview them at [icons8.com/line-awesome](https://icons8.com/line-awesome).
+For a full list of available icons see [the SVG directory](resources/svg) or preview them at [clarity.design](https://clarity.design/foundation/icons/shapes/).
 
 ## Requirements
 
