@@ -1,0 +1,67 @@
+name: Auto Update Icons
+
+on: [push]
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: true
+      matrix:
+        php: [8.0]
+        laravel: [^8.0]
+
+    name: PHP ${{ matrix.php }} - Laravel ${{ matrix.laravel }}
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+        with:
+          ref: ${{ github.head_ref }}
+
+      - name: Checkout dependent repo
+        uses: actions/checkout@v2
+        with:
+          repository: vmware/clarity-assets
+          ref: master
+          fetch-depth: 2
+          path: dist
+
+      - id: current-commit
+        name: Get current commot
+        uses: juliangruber/read-file-action@v1
+        with:
+          path: ./.commit
+
+      - id: latest-commit
+        name: Get the latest commit
+        run: |
+          echo cd dist && git log  --format="%H" -n 1
+
+      - name: Add versions to environment
+        run: |
+          echo "CURRENT_COMMIT=${{ steps.current-commit.outputs.content }}" >> $GITHUB_ENV
+          echo "LATEST_COMMIT=${{ steps.latest-commit.outputs.content }}" >> $GITHUB_ENV
+
+      - name: Output versions
+        run: |
+          echo "Current commit: ${{ env.CURRENT_COMMIT }}"
+          echo "Latest commit: ${{ env.LATEST_COMMIT }}"
+      # - name: Setup PHP
+      #   uses: shivammathur/setup-php@v2
+      #   with:
+      #     php-version: ${{ matrix.php }}
+      #     extensions: dom, curl, libxml, mbstring, zip
+      #     coverage: none
+
+      # - name: Install dependencies
+      #   run: composer update --no-interaction --no-progress --dev
+
+      # - name: Run PHP CS Fixer
+      #   run: vendor/bin/blade-icons-generate
+
+      # - name: Commit changes
+      #   uses: stefanzweifel/git-auto-commit-action@v4
+      #   with:
+      #     commit_message: Added new icons
