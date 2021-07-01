@@ -31,7 +31,7 @@ jobs:
         name: Get the latest commit
         run: |
           echo 'LATEST_COMMIT<<EOF' >> $GITHUB_ENV
-          echo ls -lth dist >> $GITHUB_ENV
+          ls -lth ./dist >> $GITHUB_ENV
           echo 'EOF' >> $GITHUB_ENV
 
       - id: current-commit
