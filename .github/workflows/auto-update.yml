@@ -27,6 +27,10 @@ jobs:
           ref: master
           fetch-depth: 2
           path: dist
+        run: |
+          echo 'LATEST_COMMIT<<EOF' >> $GITHUB_ENV
+          echo cd ./dist && git log --format="%H" -n 1 >> $GITHUB_ENV
+          echo 'EOF' >> $GITHUB_ENV
 
       - id: current-commit
         name: Get current commot
@@ -34,17 +38,9 @@ jobs:
         with:
           path: ./.commit
 
-      - id: latest-commit
-        name: Get the latest commit
-        run: |
-          echo 'LATEST_COMMIT<<EOF' >> $GITHUB_ENV
-          echo cd ./dist && git log --format="%H" -n 1 >> $GITHUB_ENV
-          echo 'EOF' >> $GITHUB_ENV
-
       - name: Add versions to environment
         run: |
           echo "CURRENT_COMMIT=${{ steps.current-commit.outputs.content }}" >> $GITHUB_ENV
-          echo "LATEST_COMMIT=${{ steps.latest-commit.outputs.content }}" >> $GITHUB_ENV
 
       - name: Output versions
         run: |
