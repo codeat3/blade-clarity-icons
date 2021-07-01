@@ -37,7 +37,9 @@ jobs:
       - id: latest-commit
         name: Get the latest commit
         run: |
-          echo cd dist && git log  --format="%H" -n 1
+          echo 'LATEST_COMMIT<<EOF' >> $GITHUB_ENV
+          echo cd ./dist && git log --format="%H" -n 1 >> $GITHUB_ENV
+          echo 'EOF' >> $GITHUB_ENV
 
       - name: Add versions to environment
         run: |
