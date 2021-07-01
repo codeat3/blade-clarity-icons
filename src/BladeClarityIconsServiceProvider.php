@@ -19,7 +19,6 @@ final class BladeClarityIconsServiceProvider extends ServiceProvider
 
             $factory->add('clarity', array_merge(['path' => __DIR__.'/../resources/svg'], $config));
         });
-
     }
 
     private function registerConfig(): void
@@ -39,5 +38,4 @@ final class BladeClarityIconsServiceProvider extends ServiceProvider
             ], 'blade-clarity-icons-config');
         }
     }
-
 }
