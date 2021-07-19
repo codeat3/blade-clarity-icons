@@ -20,11 +20,16 @@ jobs:
         with:
           ref: ${{ github.head_ref }}
 
+      - name: Read DotEnv File
+        id: dotenv
+        uses: ./.github/actions/dotenv-action
+
+
       - name: Checkout dependent repo
         uses: actions/checkout@v2
         with:
-          repository: vmware/clarity-assets
-          ref: master
+          repository: ${{ steps.dotenv.outputs.repository }}
+          ref: ${{ steps.dotenv.outputs.branch }}
           path: ./dist
 
       - id: latest-commit
@@ -53,7 +58,7 @@ jobs:
         if: env.CURRENT_COMMIT != env.LATEST_COMMIT
         run: ./vendor/bin/blade-icons-generate
 
-      - name: Update version in ".version"
+      - name: Update commit hash in ".commit"
         if: env.CURRENT_COMMIT != env.LATEST_COMMIT
         run: echo ${{ env.LATEST_COMMIT }}>./.commit
 
@@ -66,6 +71,6 @@ jobs:
           author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
           title: "chore: update icons with the latest commit v${{ env.LATEST_COMMIT }}"
           body: |
-            This updates from [${{ env.CURRENT_COMMIT }}](https://github.com/vmware/clarity-assets/commit/{{ env.CURRENT_COMMIT }}) to [${{ env.LATEST_COMMIT }}](https://github.com/vmware/clarity-assets/commit/${{ env.LATEST_COMMIT }}).
-            Check out the differences: [`${{ env.CURRENT_COMMIT }}` ... `${{ env.LATEST_COMMIT }}`](https://github.com/vmware/clarity-assets/compare/${{ env.CURRENT_COMMIT }}...${{ env.LATEST_COMMIT }})
+            This updates from [${{ env.CURRENT_COMMIT }}](https://github.com/${{ steps.dotenv.outputs.repository }}/commit/{{ env.CURRENT_COMMIT }}) to [${{ env.LATEST_COMMIT }}](https://github.com/${{ steps.dotenv.outputs.repository }}/commit/${{ env.LATEST_COMMIT }}).
+            Check out the differences: [`${{ env.CURRENT_COMMIT }}` ... `${{ env.LATEST_COMMIT }}`](https://github.com/${{ steps.dotenv.outputs.repository }}/compare/${{ env.CURRENT_COMMIT }}...${{ env.LATEST_COMMIT }})
           branch: feature/update-${{ env.LATEST_COMMIT }}
