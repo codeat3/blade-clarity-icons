@@ -28,8 +28,8 @@ jobs:
       - name: Checkout dependent repo
         uses: actions/checkout@v2
         with:
-          repository: ${{ steps.dotenv.outputs.repository }}
-          ref: ${{ steps.dotenv.outputs.branch }}
+          repository: ${{ env.REPOSITORY }}
+          ref: ${{ env.BRANCH }}
           path: ./dist
 
       - id: latest-commit
@@ -71,6 +71,6 @@ jobs:
           author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
           title: "chore: update icons with the latest commit v${{ env.LATEST_COMMIT }}"
           body: |
-            This updates from [${{ env.CURRENT_COMMIT }}](https://github.com/${{ steps.dotenv.outputs.repository }}/commit/{{ env.CURRENT_COMMIT }}) to [${{ env.LATEST_COMMIT }}](https://github.com/${{ steps.dotenv.outputs.repository }}/commit/${{ env.LATEST_COMMIT }}).
-            Check out the differences: [`${{ env.CURRENT_COMMIT }}` ... `${{ env.LATEST_COMMIT }}`](https://github.com/${{ steps.dotenv.outputs.repository }}/compare/${{ env.CURRENT_COMMIT }}...${{ env.LATEST_COMMIT }})
+            This updates from [${{ env.CURRENT_COMMIT }}](https://github.com/${{ env.REPOSITORY }}/commit/{{ env.CURRENT_COMMIT }}) to [${{ env.LATEST_COMMIT }}](https://github.com/${{ env.REPOSITORY }}/commit/${{ env.LATEST_COMMIT }}).
+            Check out the differences: [`${{ env.CURRENT_COMMIT }}` ... `${{ env.LATEST_COMMIT }}`](https://github.com/${{ env.REPOSITORY }}/compare/${{ env.CURRENT_COMMIT }}...${{ env.LATEST_COMMIT }})
           branch: feature/update-${{ env.LATEST_COMMIT }}
