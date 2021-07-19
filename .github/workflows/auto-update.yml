@@ -54,6 +54,9 @@ jobs:
           echo "Current commit: ${{ env.CURRENT_COMMIT }}"
           echo "Latest commit: ${{ env.LATEST_COMMIT }}"
 
+      - name: Install dependencies
+        run: composer update --no-interaction --no-progress --dev
+
       - name: Compile icons to resources directory
         if: env.CURRENT_COMMIT != env.LATEST_COMMIT
         run: ./vendor/bin/blade-icons-generate
