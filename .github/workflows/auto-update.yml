@@ -22,8 +22,7 @@ jobs:
 
       - name: Read DotEnv File
         id: dotenv
-        uses: ./.github/actions/dotenv-action
-
+        uses: actions/dotenv-action
 
       - name: Checkout dependent repo
         uses: actions/checkout@v2
