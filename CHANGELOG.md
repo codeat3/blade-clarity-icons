@@ -2,7 +2,16 @@
 
 This changelog follows [the Keep a Changelog standard](https://keepachangelog.com).
 
-## [Unreleased](https://github.com/codeat3/blade-clarity-icons/compare/1.4.0...HEAD)
+## [Unreleased](https://github.com/codeat3/blade-clarity-icons/compare/1.5.0...HEAD)
+
+## [1.5.0](https://github.com/codeat3/blade-clarity-icons/compare/1.4.0...1.5.0) - 2022-02-07
+
+## What's Changed
+
+- Synced with the latest commit [VM ware - Clarity Assets](https://github.com/vmware/clarity-assets/commit/152289dbbfaf2b9ca1952b3e278936c908258177)
+- chore: update icons with the latest commit v152289dbbfaf2b9ca1952b3e278936c908258177 by @github-actions in https://github.com/codeat3/blade-clarity-icons/pull/5
+
+**Full Changelog**: https://github.com/codeat3/blade-clarity-icons/compare/1.4.0...1.5.0
 
 ## [1.4.0](https://github.com/codeat3/blade-clarity-icons/compare/1.3.0...1.4.0) - 2022-02-03
 
