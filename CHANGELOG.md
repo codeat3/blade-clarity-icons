@@ -2,7 +2,15 @@
 
 This changelog follows [the Keep a Changelog standard](https://keepachangelog.com).
 
-## [Unreleased](https://github.com/codeat3/blade-clarity-icons/compare/1.5.0...HEAD)
+## [Unreleased](https://github.com/codeat3/blade-clarity-icons/compare/1.6.0...HEAD)
+
+## [1.6.0](https://github.com/codeat3/blade-clarity-icons/compare/1.5.0...1.6.0) - 2022-03-21
+
+## What's Changed
+
+- chore: update icons with the latest commit [0a0091a] by @github-actions in https://github.com/codeat3/blade-clarity-icons/pull/6
+
+**Full Changelog**: https://github.com/codeat3/blade-clarity-icons/compare/1.5.0...1.6.0
 
 ## [1.5.0](https://github.com/codeat3/blade-clarity-icons/compare/1.4.0...1.5.0) - 2022-02-07
 
