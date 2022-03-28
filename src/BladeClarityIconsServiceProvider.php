@@ -17,24 +17,24 @@ final class BladeClarityIconsServiceProvider extends ServiceProvider
         $this->callAfterResolving(Factory::class, function (Factory $factory, Container $container) {
             $config = $container->make('config')->get('blade-clarity-icons', []);
 
-            $factory->add('clarity', array_merge(['path' => __DIR__.'/../resources/svg'], $config));
+            $factory->add('clarity', array_merge(['path' => __DIR__ . '/../resources/svg'], $config));
         });
     }
 
     private function registerConfig(): void
     {
-        $this->mergeConfigFrom(__DIR__.'/../config/blade-clarity-icons.php', 'blade-clarity-icons');
+        $this->mergeConfigFrom(__DIR__ . '/../config/blade-clarity-icons.php', 'blade-clarity-icons');
     }
 
     public function boot(): void
     {
         if ($this->app->runningInConsole()) {
             $this->publishes([
-                __DIR__.'/../resources/svg' => public_path('vendor/blade-clarity-icons'),
+                __DIR__ . '/../resources/svg' => public_path('vendor/blade-clarity-icons'),
             ], 'blade-clarity-icons');
 
             $this->publishes([
-                __DIR__.'/../config/blade-clarity-icons.php' => $this->app->configPath('blade-clarity-icons.php'),
+                __DIR__ . '/../config/blade-clarity-icons.php' => $this->app->configPath('blade-clarity-icons.php'),
             ], 'blade-clarity-icons-config');
         }
     }
