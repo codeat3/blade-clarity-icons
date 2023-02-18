@@ -2,7 +2,19 @@
 
 This changelog follows [the Keep a Changelog standard](https://keepachangelog.com).
 
-## [Unreleased](https://github.com/codeat3/blade-clarity-icons/compare/1.7.0...HEAD)
+## [Unreleased](https://github.com/codeat3/blade-clarity-icons/compare/1.8.0...HEAD)
+
+## [1.8.0](https://github.com/codeat3/blade-clarity-icons/compare/1.7.0...1.8.0) - 2023-02-18
+
+### What's Changed
+
+- Laravel 10 Support by @inmanturbo in https://github.com/codeat3/blade-clarity-icons/pull/8
+
+### New Contributors
+
+- @inmanturbo made their first contribution in https://github.com/codeat3/blade-clarity-icons/pull/8
+
+**Full Changelog**: https://github.com/codeat3/blade-clarity-icons/compare/1.7.0...1.8.0
 
 ## [1.7.0](https://github.com/codeat3/blade-clarity-icons/compare/1.6.0...1.7.0) - 2022-03-28
 
