@@ -8,6 +8,14 @@ $svgNormalization = static function (string $tempFilepath, array $iconSet) {
     $iconProcessor = new IconProcessor($tempFilepath, $iconSet);
     $iconProcessor
         ->optimize()
+        ->postOptimizationAsString(function ($svgLine) {
+            return str_replace([
+                'fill="#e62700"',
+                'fill="#fac400"',
+                'fill="#000000"',
+                'fill="#ffffff"',
+            ], 'fill="currentColor"', $svgLine);
+        })
         ->save();
 };
 
