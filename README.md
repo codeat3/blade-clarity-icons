@@ -16,7 +16,7 @@
 
 A package to easily make use of [Blade Clarity Icons](https://github.com/vmware/clarity-assets) in your Laravel Blade views.
 
-For a full list of available icons see [the SVG directory](resources/svg) or preview them at [clarity.design](https://clarity.design/foundation/icons/shapes/).
+For a full list of available icons see [the SVG directory](resources/svg) or preview them at [clarity.design](https://clarity.design/documentation/icons/shapes).
 
 ## Requirements
 
