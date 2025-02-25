@@ -2,7 +2,20 @@
 
 This changelog follows [the Keep a Changelog standard](https://keepachangelog.com).
 
-## [Unreleased](https://github.com/codeat3/blade-clarity-icons/compare/1.9.0...HEAD)
+## [Unreleased](https://github.com/codeat3/blade-clarity-icons/compare/1.10.0...HEAD)
+
+## [1.10.0](https://github.com/codeat3/blade-clarity-icons/compare/1.9.0...1.10.0) - 2025-02-25
+
+### What's Changed
+
+* Update broken URL on README.md by @vasilisdotme in https://github.com/codeat3/blade-clarity-icons/pull/12
+* laravel 12 support added by @swapnilsarwe in https://github.com/codeat3/blade-clarity-icons/pull/13
+
+### New Contributors
+
+* @vasilisdotme made their first contribution in https://github.com/codeat3/blade-clarity-icons/pull/12
+
+**Full Changelog**: https://github.com/codeat3/blade-clarity-icons/compare/1.9.0...1.10.0
 
 ## [1.9.0](https://github.com/codeat3/blade-clarity-icons/compare/1.8.1...1.9.0) - 2024-02-28
 
